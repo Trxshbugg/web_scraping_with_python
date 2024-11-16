@@ -1,62 +1,37 @@
 Job Finder Script
 
-A Python script that scrapes job listings from TimesJobs and filters them based on the skills provided by the user. It also includes functionality to extract specific data from an HTML file (e.g., course details from a local file).
+A Python-based project to automate the process of finding and filtering job listings from online sources. This script focuses on simplifying the job search by excluding positions requiring specific skills that the user is not familiar with.
 
 Features
-Scrapes job listings using BeautifulSoup and Requests.
-Filters jobs based on skills you are unfamiliar with.
-Extracts details like:
-Company Name
-Skills Required
-Job Link
-Repeats job searching every 10 minutes (configurable).
-Bonus functionality to extract and print <h5> tags and course card information from an HTML file.
-Prerequisites
-Before running this script, make sure you have the following:
 
-Python 3.x installed
-The required Python libraries installed:
-bash
-Copy code
-pip install requests beautifulsoup4
-Usage
-Job Finder
-Run the script:
-bash
-Copy code
-python script_name.py
-Enter the skills you are unfamiliar with (separated by spaces). For example:
-sql
-Copy code
-put some skill that you are not familiar with:
->java php
-The script will filter out job listings containing these skills.
-The script will display job details such as company name, skills, and a link for more information.
-HTML File Processing
-Place the home.html file in the same directory as the script.
-The script will:
-Find all <h5> tags and print their content.
-Extract course details (name and price) from <div> tags with the class card.
-Code Explanation
-Main Functions
-find_jobs()
-Fetches job listings from TimesJobs.
-Filters jobs posted in the last 3 days.
-Filters out jobs requiring skills the user is unfamiliar with.
-Displays the job details.
-HTML File Processing
-Opens and reads a local HTML file.
-Extracts and prints all <h5> tags.
-Extracts course names and prices from <div> elements with the class card.
-Configuration
-Time Interval: Change the job searching interval by modifying the time_wait variable:
-python
-Copy code
-time_wait = 10  # Set to the desired number of minutes
-Technologies Used
-Python: Programming language.
-BeautifulSoup: For HTML parsing.
-Requests: For making HTTP requests.
-Notes
-Ensure that the website structure matches the parsing logic in the script. If the website changes, the script may need updates.
-The course extraction functionality is designed for a specific HTML structure (home.html).
+Automated Job Search: Scrapes job listings from TimesJobs and filters them based on the user’s input.
+Customizable Skill Filtering: Users can specify skills they are unfamiliar with to exclude irrelevant job postings.
+Periodic Execution: The script runs periodically to fetch the latest job postings, ensuring you stay updated.
+Detailed Job Information: Displays company name, required skills, and links to the full job description.
+
+How It Works
+
+The user specifies a list of skills they want to filter out.
+The script retrieves job listings posted within the last three days from TimesJobs.
+Jobs matching the user's criteria are displayed with relevant details.
+The process repeats at regular intervals, ensuring fresh job listings.
+Prerequisites
+Before using this script, ensure you have the following:
+
+Python 3.x installed on your system.
+Required Python libraries:
+requests for making web requests.
+beautifulsoup4 for parsing HTML content.
+Application Scenarios
+Job Seekers: Automate your job search and focus only on positions that match your expertise.
+Skill-Specific Searches: Identify jobs based on specific skill requirements and avoid irrelevant listings.
+Recruitment Assistance: Useful for recruiters or agencies to filter job postings for their clients.
+Additional Functionality
+The script also includes features for processing local HTML files. It can extract specific elements, such as course names and prices, from structured data.
+
+Repository Goals
+
+This repository aims to:
+Simplify the job search process using Python automation.
+Provide an example of web scraping with BeautifulSoup and Requests.
+Offer a base script that can be further customized for various job portals and criteria.
