@@ -1,4 +1,5 @@
 Job Finder Script
+
 A Python script that scrapes job listings from TimesJobs and filters them based on the skills provided by the user. It also includes functionality to extract specific data from an HTML file (e.g., course details from a local file).
 
 Features
